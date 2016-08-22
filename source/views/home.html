@@ -1,0 +1,41 @@
+<div class="container">
+	<div class="top">
+		<div class="row">
+			<table class="logos">
+				<tr>
+					<td class="logoTD"><img src="img/{{nextGame.logo}}" /></td>
+					<td><span>@</span></td>
+					<td class="logoTD"><img src="img/utah.png" /></td>
+				</tr>
+			</table>
+		</div>
+		<div class="row countdown">
+			<h1 class="block">{{nextGame.opponent}}</h1>
+			<h2 class="block">{{nextGame.mascot}}</h2>
+			<div class="gameInfo">
+				<h3>{{nextGame.datetime}}</h3>
+				<div>Current Date: <span id="currentDate">never</span></div>
+				<div>{{nextGame.difference}}</div>
+			</div>
+		</div>
+		<div class="row counter">
+			<table class="center">
+				<tr class="counterNums">
+					<td class="block">{{gametime().days}}</td>
+					<td class="block">{{gametime().hours}}</td>
+					<td class="block">{{gametime().minutes}}</td>
+					<td class="block">{{gametime().seconds}}</td>
+				</tr>
+				<tr>
+					<td>days</td>
+					<td>hours</td>
+					<td>minutes</td>
+					<td>seconds</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="schedule">
+	{{> schedule }}
+	</div>
+</div>

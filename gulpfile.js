@@ -5,53 +5,81 @@ var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
+var nodemon = require('gulp-nodemon');
+var jshint = require('gulp-jshint');
 var del = require('del');
 
 var paths = {
-	scripts: 'source/js/**/*.js',
+	myScripts: 'source/js/scripts.js',
+	lintScripts: 'source/js/*.js',
+	otherScripts: 'node_modules/moment/min/moment.min.js',
 	styles: 'source/sass/**/*.scss',
-	images: 'source/images'
+	images: 'cdn/img'
 };
 
 gulp.task('default', ['develop']);
 
-gulp.task('develop', ['scripts','styles','images','watch']);
+gulp.task('develop', ['scripts','styles','minify-images']);
 
-gulp.task('clean', function() {
-	return del(['cdn']);
+// watch server files and restart as necessary
+gulp.task('start', ['watch'], function () {
+	nodemon({
+		script: 'app.js',
+		ext: 'js html',
+		ignore: ['cdn']
+		})
+	.on('restart', function () {
+		console.log('server restarted');
+		})
+	})
+
+// get tasks ready for watch
+gulp.task('clean::js', function() {
+	return del(['cdn/js']);
+	});
+gulp.task('clean::css', function() {
+	return del(['cdn/css']);
+	});
+
+gulp.task('lint', function() {
+	return gulp.src(paths.lintScripts)
+	.pipe(jshint())
+	.pipe(jshint.reporter('jshint-stylish', { verbose: true }))
+	.pipe(jshint.reporter('fail'));
 });
 
-gulp.task('scripts', ['clean'], function() {
-	return gulp.src(paths.scripts)
+gulp.task('scripts', ['lint', 'clean::js'], function() {
+	return gulp.src([paths.otherScripts, paths.myScripts])
 	.pipe(sourcemaps.init())
 		.pipe(uglify())
-		.pipe(concat('all.min.js'))
+		.pipe(concat('scripts.min.js'))
 	.pipe(sourcemaps.write())
 	.pipe(gulp.dest('cdn/js'));
-});
+	});
 
-gulp.task('styles', ['clean'], function () {
-  return gulp.src(paths.styles)
-    .pipe(sourcemaps.init())
-       .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-       .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
-       .pipe(concat('all.min.css'))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('cdn/css'));
-});
+gulp.task('styles', ['clean::css'], function () {
+	return gulp.src(paths.styles)
+	.pipe(sourcemaps.init())
+	.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+	.pipe(autoprefixer({
+		browsers: ['last 2 versions'],
+		cascade: false
+		}))
+	.pipe(concat('styles.min.css'))
+	.pipe(sourcemaps.write())
+	.pipe(gulp.dest('cdn/css'));
+	});
 
-gulp.task('images', ['clean'], function() {
-  return gulp.src(paths.images)
-    .pipe(imagemin({optimizationLevel: 5}))
-    .pipe(gulp.dest('cdn/img'));
-});
+gulp.task('minify-images', function() {
+	return gulp.src(paths.images)
+	.pipe(imagemin({optimizationLevel: 5}))
+	.pipe(gulp.dest(paths.images));
+	});
 
+// watch scripts, styles, and images
 gulp.task('watch', function(){
-	gulp.watch(paths.scripts, ['scripts']);
+	gulp.watch(paths.myScripts, ['scripts']);
 	gulp.watch(paths.styles, ['styles']);
-	gulp.watch(paths.images, ['images']);
+	gulp.watch(paths.images, ['minify-images']);
 	console.log('Waiting for changes...');
-});
+	});

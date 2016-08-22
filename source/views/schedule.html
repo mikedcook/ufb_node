@@ -1,0 +1,24 @@
+<table class="table center">
+	<thead>
+		<tr>
+			<th> </th>
+			<th>Opponent</th>
+			<th>Date</th>
+			<th>Time</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody ng-repeat="game in games">
+		{{#games}}
+		<tr>
+			<td class="logo"><img src="img/{{logo}}" /></td>
+			<td>{{opponent}} {{mascot}}</td>
+			<td>{{datetime}}</td>
+			<!-- <td>
+				<span>{{datetime}}</span>
+			</td> -->
+			<td><span class="result {{result}}">{{result}}</span> {{score}}</td>
+		</tr>
+		{{/games}}
+	</tbody>
+</table>

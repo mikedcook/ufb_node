@@ -1,0 +1,21 @@
+{
+  "name": "ufb_node",
+  "description": "Utah Football Countdown for Node",
+  "main": "app.js",
+  "authors": [
+    "Mike Cook"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/mikedcook/ufb_node",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.6.3"
+  }
+}
