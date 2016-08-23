@@ -1,119 +1,133 @@
-module.exports = [
+var getTime = require('./getTime.js');
+gamesArr = [
 	{
 		"opponent": "Southern Utah",
 		"mascot": "Thunderbirds",
-		"datetime": "Sep 1 2016 6:00 pm",
+		"dateTime": "Sep 1 2016 18:00",
 		"logo": "suu.png",
-		"hometeam": "utah",
+		"homeGame": true,
 		"result": "",
 		"score": ""
 	},
 	{
 		"opponent": "BYU",
 		"mascot": "Cougars",
-		"datetime": "Sep 10 2016 5:30 pm",
+		"dateTime": "Sep 10 2016 17:30",
 		"logo": "byu.jpg",
-		"hometeam": "utah",
+		"homeGame": true,
 		"result": "",
 		"score": ""
 	},
 	{
 		"opponent": "San Jose State",
 		"mascot": "Spartans",
-		"datetime": "Sep 17 2016 8:30 pm",
+		"dateTime": "Sep 17 2016 20:30",
 		"logo": "sanjosestate.png",
-		"hometeam": "opp",
+		"homeGame": false,
 		"result": "",
 		"score": ""
 	},
 	{
 		"opponent": "USC",
 		"mascot": "Trojans",
-		"datetime": "Sep 23 2016",
+		"dateTime": "Sep 23 2016",
 		"logo": "usc.jpg",
-		"hometeam": "utah",
+		"homeGame": true,
 		"result": "",
 		"score": ""
 	},
 	{
 		"opponent": "Cal",
 		"mascot": "Golden Bears",
-		"datetime": "Oct 1 2016",
+		"dateTime": "Oct 1 2016",
 		"logo": "cal.jpg",
-		"hometeam": "opp",
+		"homeGame": false,
 		"result": "",
 		"score": ""
 	},
 	{
 		"opponent": "Arizona",
 		"mascot": "Wildcats",
-		"datetime": "Oct 8 2016",
+		"dateTime": "Oct 8 2016",
 		"logo": "arizona.jpg",
-		"hometeam": "utah",
+		"homeGame": true,
 		"result": "",
 		"score": ""
 	},
 	{
 		"opponent": "Oregon State",
 		"mascot": "Beavers",
-		"datetime": "Oct 15 2016",
+		"dateTime": "Oct 15 2016",
 		"logo": "oregonstate.jpg",
-		"hometeam": "opp",
+		"homeGame": false,
 		"result": "",
 		"score": ""
 	},
 	{
 		"opponent": "UCLA",
 		"mascot": "Bruins",
-		"datetime": "Oct 22 2016",
+		"dateTime": "Oct 22 2016",
 		"logo": "ucla.jpg",
-		"hometeam": "opp",
+		"homeGame": false,
 		"result": "",
 		"score": ""
 	},
 	{
 		"opponent": "Washington",
 		"mascot": "Huskies",
-		"datetime": "Oct 29 2016",
+		"dateTime": "Oct 29 2016",
 		"logo": "washington.jpg",
-		"hometeam": "utah",
+		"homeGame": true,
 		"result": "",
 		"score": ""
 	},
 	{
 		"opponent": "BYE",
 		"mascot": "",
-		"datetime": "Nov 5 2016",
+		"dateTime": "Nov 5 2016",
 		"logo": "utah-gray.png",
-		"hometeam": "utah",
+		"homeGame": true,
 		"result": "",
 		"score": ""
 	},
 	{
 		"opponent": "Arizona State",
 		"mascot": "Sun Devils",
-		"datetime": "Nov 10 2016",
+		"dateTime": "Nov 10 2016",
 		"logo": "arizonastate.jpg",
-		"hometeam": "opp",
+		"homeGame": false,
 		"result": "",
 		"score": ""
 	},
 	{
 		"opponent": "Oregon",
 		"mascot": "Ducks",
-		"datetime": "Nov 19 2016",
+		"dateTime": "Nov 19 2016",
 		"logo": "oregon.jpg",
-		"hometeam": "utah",
+		"homeGame": true,
 		"result": "",
 		"score": ""
 	},
 	{
 		"opponent": "Colorado",
 		"mascot": "Buffaloes",
-		"datetime": "Nov 26 2016",
+		"dateTime": "Nov 26 2016",
 		"logo": "colorado.jpg",
-		"hometeam": "opp",
+		"homeGame": false,
 		"result": "",
 		"score": ""
 	}
 ];
+(function() {
+	for(g = 0; g < gamesArr.length; g++) {
+		var game = gamesArr[g];
+		var displayDate = getTime.display(game.dateTime, 'ddd, MMM Do YYYY');
+		var displayTime = getTime.display(game.dateTime, 'h:mm a');
+			displayTime = displayTime.valueOf().replace("12:00 am", "TBD");
+		game.displayDate = displayDate;
+		game.displayTime = displayTime;
+
+		game.dateTimeUnix = getTime.unix(game.dateTime);
+	}
+})();
+module.exports = gamesArr;
