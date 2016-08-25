@@ -2,10 +2,19 @@ var gamesArr = require('./games.js');
 var moment = require('moment');
 var nextGame = function() {
 	for(g = 0; g < gamesArr.length; g++) {
-		var gameTime = gamesArr[g].dateTimeUnix;
+		var nextGameObj = gamesArr[g];
+		var gameTime = nextGameObj.dateTimeUnix;
 		var now = moment().format('X');
 		if (gameTime > now) {
-			return gamesArr[g];
+			var homeLogo = 'utah.png',
+				visitorLogo = nextGameObj.logo;
+			if (!nextGameObj.homeGame){
+				visitorLogo = homeLogo;
+				homeLogo = nextGameObj.logo;
+			}
+			nextGameObj.homeLogo = homeLogo;
+			nextGameObj.visitorLogo = visitorLogo;
+			return nextGameObj;
 		}
 	}
 };

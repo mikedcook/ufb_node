@@ -13,51 +13,66 @@ body {
 
 .top {
   text-align: center;
-}
-.top h1 {
-  font-size: 460%;
-  margin-bottom: 0;
-}
-.top h2 {
-  font-size: 300%;
-  margin-top: 0;
-}
-.top .logos {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-}
-.top .logos td.logoTD {
-  width: 50%;
-  padding: 0 2%;
-}
-.top .logos td > span {
-  font-size: 200%;
-  font-weight: bold;
-}
-.top .logos img {
-  width: 100%;
+
+	h1 {
+		font-size: 460%;
+		margin-bottom: 0;
+	}
+	h2 {
+		font-size: 300%;
+		margin-top: 0;
+	}
+	.logos {
+		width: 100%;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+	.logos td.logoTD {
+		width: 50%;
+		padding: 0 2%;
+	}
+	.logos td > span {
+		font-size: 200%;
+		font-weight: bold;
+	}
+	.logos img {
+		width: 100%;
+	}
 }
 
-.counter table{
-  width: 100%;
-  max-width: 500px;
-}
-.counter .counterNums {
-  font-size: 500%;
-}
-.counter .counterNums td{
-  padding: 0 2%;
+.counter {
+  table{
+    width: 100%;
+    max-width: 500px;
+  }
+  .counterNums {
+    font-size: 500%;
+  }
+  .counterNums td{
+    padding: 0 2%;
+  }
 }
 
-.schedule > table{
-  margin: 30px 0;
-}
-.schedule .logo {
-  text-align: center;
-}
-.schedule .logo > img {
-  max-height: 30px;
+.schedule {
+	> table{
+		margin: 30px 0;
+	}
+
+	tr.home {
+		background-color: #f6f6f6;
+	}
+
+	td {
+		vertical-align: middle !important;
+	}
+
+	.logo {
+		text-align: center;
+
+		> img {
+			max-height: 30px;
+		}
+	}
 }
 @media screen and (max-width: 460px){
   body {
@@ -69,6 +84,6 @@ body {
 }
 
 // temporarily make huge logos less huge
-.top .logos td.logoTD {
-  width: 10%;
-}
+// .top .logos td.logoTD {
+//   width: 10%;
+// }

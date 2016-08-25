@@ -10,9 +10,9 @@
 	</thead>
 	<tbody ng-repeat="game in games">
 		{{#games}}
-		<tr>
+		<tr{{#homeGame}} class="home"{{/homeGame}}>
 			<td class="logo"><img src="img/{{logo}}" /></td>
-			<td>{{opponent}} {{mascot}}</td>
+			<td>{{#homeGame}}<span>@</span> {{/homeGame}}{{opponent}} {{mascot}}</td>
 			<td>{{displayDate}}</td>
 			<td>{{displayTime}}</td>
 			<!-- <td>

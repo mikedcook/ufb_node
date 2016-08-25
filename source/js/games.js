@@ -13,7 +13,7 @@ gamesArr = [
 		"opponent": "BYU",
 		"mascot": "Cougars",
 		"dateTime": "Sep 10 2016 17:30",
-		"logo": "byu.jpg",
+		"logo": "byu.png",
 		"homeGame": true,
 		"result": "",
 		"score": ""
@@ -31,7 +31,7 @@ gamesArr = [
 		"opponent": "USC",
 		"mascot": "Trojans",
 		"dateTime": "Sep 23 2016",
-		"logo": "usc.jpg",
+		"logo": "usc.png",
 		"homeGame": true,
 		"result": "",
 		"score": ""
@@ -76,7 +76,7 @@ gamesArr = [
 		"opponent": "Washington",
 		"mascot": "Huskies",
 		"dateTime": "Oct 29 2016",
-		"logo": "washington.jpg",
+		"logo": "washington.png",
 		"homeGame": true,
 		"result": "",
 		"score": ""
@@ -103,7 +103,7 @@ gamesArr = [
 		"opponent": "Oregon",
 		"mascot": "Ducks",
 		"dateTime": "Nov 19 2016",
-		"logo": "oregon.jpg",
+		"logo": "oregon.png",
 		"homeGame": true,
 		"result": "",
 		"score": ""
@@ -121,11 +121,9 @@ gamesArr = [
 (function() {
 	for(g = 0; g < gamesArr.length; g++) {
 		var game = gamesArr[g];
-		var displayDate = getTime.display(game.dateTime, 'ddd, MMM Do YYYY');
-		var displayTime = getTime.display(game.dateTime, 'h:mm a');
-			displayTime = displayTime.valueOf().replace("12:00 am", "TBD");
-		game.displayDate = displayDate;
-		game.displayTime = displayTime;
+		game.displayDate = getTime.display(game.dateTime, 'ddd, MMM Do YYYY');
+		game.displayTime = getTime.display(game.dateTime, 'h:mm a').replace("12:00 am", "TBD");
+		// game.homeGame = true;
 
 		game.dateTimeUnix = getTime.unix(game.dateTime);
 	}

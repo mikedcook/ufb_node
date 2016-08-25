@@ -3,15 +3,9 @@
 		<div class="row">
 			<table class="logos">
 				<tr>
-					<span>Is the next game a home game?: {{nextGame.homeGame}}</span>
-					{{#nextGame.homeGame}}
-						<td class="logoTD"><img src="img/{{nextGame.logo}}" /></td>
-						<td><span>@</span></td>
-					{{/nextGame.homeGame}}
-					{{^nextGame.homeGame}}
-						<td><span>@</span></td>
-						<td class="logoTD"><img src="img/{{nextGame.logo}}" /></td>
-					{{/nextGame.homeGame}}
+					<td class="logoTD"><img src="img/{{nextGame.visitorLogo}}" /></td>
+					<td><span>@</span></td>
+					<td class="logoTD"><img src="img/{{nextGame.homeLogo}}" /></td>
 				</tr>
 			</table>
 		</div>
