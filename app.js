@@ -13,7 +13,7 @@ app.set('layout', 'layout');
 app.enable('view cache');
 app.engine('html', require('hogan-express'));
 
-app.get('/home', function(req, res) {
+app.get('/', function(req, res) {
 	res.locals = {};
 	res.render('home', {
 		'partials': {

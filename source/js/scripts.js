@@ -14,7 +14,6 @@ var getCounter = function() {
 		'seconds': document.getElementById('counterSeconds')
 	};
 	var dateTimeUnix = ce.parent.getAttribute("data-unix");
-	console.log('dateTimeUnix: ' + dateTimeUnix);
 	var difference = dateTimeUnix - now;
 	
 	ce.seconds.innerHTML	=	Math.floor(difference % 60); difference /= 60;
