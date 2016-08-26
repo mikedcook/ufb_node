@@ -1,3 +1,6 @@
+bin
+lib
+run
 node_modules
 cdn/lib
 cdn/js
