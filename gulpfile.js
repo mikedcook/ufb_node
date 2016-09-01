@@ -10,9 +10,13 @@ var jshint = require('gulp-jshint');
 var del = require('del');
 
 var paths = {
-	myScripts: 'source/js/scripts.js',
+	watchScripts: 'source/js/scripts.js',
 	lintScripts: 'source/js/*.js',
-	otherScripts: 'node_modules/moment/min/moment.min.js',
+	minifyScripts: [
+		'node_modules/moment/min/moment.min.js',
+		'node_modules/moment-timezone/builds/moment-timezone-with-data-2010-2020.min.js',
+		'source/js/scripts.js'
+	],
 	styles: 'source/sass/**/*.scss',
 	images: 'cdn/img'
 };
@@ -49,7 +53,7 @@ gulp.task('lint', function() {
 });
 
 gulp.task('scripts', ['lint', 'clean::js'], function() {
-	return gulp.src([paths.otherScripts, paths.myScripts])
+	return gulp.src(paths.minifyScripts)
 	.pipe(sourcemaps.init())
 		.pipe(uglify())
 		.pipe(concat('scripts.min.js'))
@@ -78,7 +82,7 @@ gulp.task('minify-images', function() {
 
 // watch scripts, styles, and images
 gulp.task('watch', function(){
-	gulp.watch(paths.myScripts, ['scripts']);
+	gulp.watch(paths.watchScripts, ['scripts']);
 	gulp.watch(paths.styles, ['styles']);
 	gulp.watch(paths.images, ['minify-images']);
 	console.log('Waiting for changes...');

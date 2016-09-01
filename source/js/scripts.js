@@ -1,11 +1,10 @@
-var today = function() {
-	return moment().format("ddd, MMM D YYYY, h:mm:ss a");
-};
+var timezone = 'America/Denver';
 var setDate = function() {
-	document.getElementById('currentDate').innerHTML = today();
+	var currentDate = moment().tz(timezone).format("ddd, MMM D YYYY, h:mm:ss a");
+	document.getElementById('currentDate').innerHTML = currentDate;
 };
 var getCounter = function() {
-	var now = moment().format('X');
+	var now = moment.tz(timezone).format('X');
 	var ce = {
 		'parent': document.getElementById('counter'),
 		'days': document.getElementById('counterDays'),
