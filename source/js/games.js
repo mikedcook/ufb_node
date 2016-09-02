@@ -6,8 +6,8 @@ gamesArr = [
 		"dateTime": "Sep 1 2016 18:00",
 		"logo": "suu.png",
 		"homeGame": true,
-		"result": "",
-		"score": ""
+		"result": "W",
+		"score": "24-0"
 	},
 	{
 		"opponent": "BYU",

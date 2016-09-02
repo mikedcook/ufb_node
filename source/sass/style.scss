@@ -79,6 +79,14 @@ body {
 		}
 	}
 }
+.result {
+	&.W {
+		color: green;
+	}
+	&.L {
+		color: red;
+	}
+}
 @media screen and (max-width: 460px){
   body {
     font-size: 12px;
