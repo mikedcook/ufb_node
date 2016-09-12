@@ -15,8 +15,8 @@ gamesArr = [
 		"dateTime": "Sep 10 2016 17:30",
 		"logo": "byu.png",
 		"homeGame": true,
-		"result": "",
-		"score": ""
+		"result": "W",
+		"score": "20-19"
 	},
 	{
 		"opponent": "San Jose State",
@@ -30,7 +30,7 @@ gamesArr = [
 	{
 		"opponent": "USC",
 		"mascot": "Trojans",
-		"dateTime": "Sep 23 2016",
+		"dateTime": "Sep 23 2016 19:00",
 		"logo": "usc.png",
 		"homeGame": true,
 		"result": "",
@@ -93,7 +93,7 @@ gamesArr = [
 	{
 		"opponent": "Arizona State",
 		"mascot": "Sun Devils",
-		"dateTime": "Nov 10 2016",
+		"dateTime": "Nov 10 2016 19:30",
 		"logo": "arizonastate.jpg",
 		"homeGame": false,
 		"result": "",
