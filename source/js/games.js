@@ -33,8 +33,8 @@ gamesArr = [
 		"dateTime": "Sep 23 2016 19:00",
 		"logo": "usc.png",
 		"homeGame": true,
-		"result": "",
-		"score": ""
+		"result": "W",
+		"score": "31-27"
 	},
 	{
 		"opponent": "Cal",
