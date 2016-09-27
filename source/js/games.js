@@ -48,7 +48,7 @@ gamesArr = [
 	{
 		"opponent": "Arizona",
 		"mascot": "Wildcats",
-		"dateTime": "Oct 8 2016",
+		"dateTime": "Oct 8 2016 20:00",
 		"logo": "arizona.png",
 		"homeGame": true,
 		"result": "",
