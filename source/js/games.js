@@ -42,8 +42,8 @@ gamesArr = [
 		"dateTime": "Oct 1 2016 16:00",
 		"logo": "cal.png",
 		"homeGame": false,
-		"result": "",
-		"score": ""
+		"result": "L",
+		"score": "23-28"
 	},
 	{
 		"opponent": "Arizona",
@@ -51,8 +51,8 @@ gamesArr = [
 		"dateTime": "Oct 8 2016 20:00",
 		"logo": "arizona.png",
 		"homeGame": true,
-		"result": "",
-		"score": ""
+		"result": "W",
+		"score": "36-23"
 	},
 	{
 		"opponent": "Oregon State",
@@ -60,13 +60,13 @@ gamesArr = [
 		"dateTime": "Oct 15 2016",
 		"logo": "oregonstate.png",
 		"homeGame": false,
-		"result": "",
-		"score": ""
+		"result": "W",
+		"score": "19-14"
 	},
 	{
 		"opponent": "UCLA",
 		"mascot": "Bruins",
-		"dateTime": "Oct 22 2016",
+		"dateTime": "Oct 22 2016 14:00",
 		"logo": "ucla.png",
 		"homeGame": false,
 		"result": "",
@@ -75,7 +75,7 @@ gamesArr = [
 	{
 		"opponent": "Washington",
 		"mascot": "Huskies",
-		"dateTime": "Oct 29 2016",
+		"dateTime": "Oct 29 2016 13:30",
 		"logo": "washington.png",
 		"homeGame": true,
 		"result": "",
