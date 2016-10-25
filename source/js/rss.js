@@ -37,10 +37,10 @@ module.exports = new Promise(function(resolve, reject) {
 				return {
 					list: list, 
 					index: nextGameIndex
-				}
-			}
+				};
+			};
 			resolve (gamesList());
 		}
-	})
+	});
 
 });
