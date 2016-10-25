@@ -1,0 +1,30 @@
+<div class="container">
+	<div class="top">
+		<table class="table center">
+			<thead>
+				<tr>
+					<th> </th>
+					<th>Opponent</th>
+					<th>Date</th>
+					<th>Time</th>
+					<th>Score</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{feedGames}}
+				{{#feedGames}}
+				<tr class="{{#homeGame}}home {{/homeGame}}">
+					<td class="logo"><img src="{{logo}}" /></td>
+					<td>{{^homeGame}}<span>@</span> {{/homeGame}}{{opponent}} {{mascot}}</td>
+					<td>{{displayDate}}</td>
+					<td>{{displayTime}}</td>
+					<!-- <td>
+						<span>{{datetime}}</span>
+					</td> -->
+					<td><span class="result {{result}}">{{result}}</span> {{score}}</td>
+				</tr>
+				{{/feedGames}}
+			</tbody>
+		</table>
+	</div>
+</div>

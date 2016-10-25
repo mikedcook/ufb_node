@@ -18,10 +18,17 @@
   },
   "homepage": "https://github.com/mikedcook/ufb_node#readme",
   "dependencies": {
+    "Promise": "^1.0.5",
     "datejs": "^1.0.0-rc3",
     "express": "^4.14.0",
+    "feed-read": "0.0.1",
+    "feedparser": "^1.1.4",
+    "fs": "0.0.1-security",
     "moment": "^2.14.1",
-    "moment-timezone": "^0.5.5"
+    "moment-timezone": "^0.5.5",
+    "needle": "^1.1.2",
+    "request": "^2.75.0",
+    "rss-to-json": "^1.0.2"
   },
   "devDependencies": {
     "del": "^2.2.1",
@@ -37,6 +44,7 @@
     "hogan-express": "^0.5.2",
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.2.0",
-    "sass": "^0.5.0"
+    "sass": "^0.5.0",
+    "xml2js": "^0.4.17"
   }
 }

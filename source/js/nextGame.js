@@ -1,4 +1,4 @@
-var gamesArr = require('./games.js');
+var gamesArr = require('./rss.js');
 var moment = require('moment');
 var nextGame = function() {
 	for(g = 0; g < gamesArr.length; g++) {

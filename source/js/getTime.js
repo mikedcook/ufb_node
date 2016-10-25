@@ -3,11 +3,11 @@ var momentTimezone = require('moment-timezone');
 var timezone = 'America/Denver';
 module.exports = {
 	"display": function(dateTime, format) {
-		var gameTime = moment.tz(dateTime, ['MMM D YYYY H:mm', 'MMM D YYYY'], timezone);
-		return gameTime.format(format);
+		// return moment.tz(dateTime, ['YYYY-MM-DD HH:mm:ss', 'YYYY-MM-DD'], timezone).format(format);
+		return moment(dateTime).tz(timezone).format(format);
 	},
 	"unix": function(dateTime) {
-		var gameTime = moment.tz(dateTime, ['MMM D YYYY H:mm', 'MMM D YYYY'], timezone);
-		return gameTime.format('X');
+		// return moment.tz(dateTime, ['YYYY-MM-DD HH:mm:ss', 'YYYY-MM-DD'], timezone).format('X');
+		return moment(dateTime).tz(timezone).format('X');
 	}
 };

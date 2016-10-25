@@ -2,8 +2,7 @@ var express = require('express');
 var app = express();
 var http = require('http');
 var port = process.env.PORT || 32377;
-var gamesArr = require('./source/js/games.js');
-var nextGame = require('./source/js/nextGame.js');
+var feed = require('./source/js/rss.js');
 
 // app.use(express.static('source/views'));
 app.use(express.static('cdn'));
@@ -14,13 +13,14 @@ app.enable('view cache');
 app.engine('html', require('hogan-express'));
 
 app.get('/', function(req, res) {
-	res.locals = {};
-	res.render('home', {
-		'partials': {
-			'schedule': 'schedule'
-		},
-		'games': gamesArr,
-		'nextGame': nextGame
+	feed.then(function(gamesList){
+		res.render('home', {
+			'partials': {
+				'schedule': 'schedule'
+			},
+			'games': gamesList.list,
+			'nextGame': gamesList.list[gamesList.index]
+		});
 	});
 });
 
