@@ -15,8 +15,8 @@ gamesArr = [
 		"dateTime": "Sep 10 2016 17:30",
 		"logo": "byu.png",
 		"homeGame": true,
-		"result": "",
-		"score": ""
+		"result": "W",
+		"score": "20-19"
 	},
 	{
 		"opponent": "San Jose State",
@@ -24,50 +24,50 @@ gamesArr = [
 		"dateTime": "Sep 17 2016 20:30",
 		"logo": "sanjosestate.png",
 		"homeGame": false,
-		"result": "",
-		"score": ""
+		"result": "W",
+		"score": "34-17"
 	},
 	{
 		"opponent": "USC",
 		"mascot": "Trojans",
-		"dateTime": "Sep 23 2016",
+		"dateTime": "Sep 23 2016 19:00",
 		"logo": "usc.png",
 		"homeGame": true,
-		"result": "",
-		"score": ""
+		"result": "W",
+		"score": "31-27"
 	},
 	{
 		"opponent": "Cal",
 		"mascot": "Golden Bears",
-		"dateTime": "Oct 1 2016",
-		"logo": "cal.jpg",
+		"dateTime": "Oct 1 2016 16:00",
+		"logo": "cal.png",
 		"homeGame": false,
-		"result": "",
-		"score": ""
+		"result": "L",
+		"score": "23-28"
 	},
 	{
 		"opponent": "Arizona",
 		"mascot": "Wildcats",
-		"dateTime": "Oct 8 2016",
-		"logo": "arizona.jpg",
+		"dateTime": "Oct 8 2016 20:00",
+		"logo": "arizona.png",
 		"homeGame": true,
-		"result": "",
-		"score": ""
+		"result": "W",
+		"score": "36-23"
 	},
 	{
 		"opponent": "Oregon State",
 		"mascot": "Beavers",
 		"dateTime": "Oct 15 2016",
-		"logo": "oregonstate.jpg",
+		"logo": "oregonstate.png",
 		"homeGame": false,
-		"result": "",
-		"score": ""
+		"result": "W",
+		"score": "19-14"
 	},
 	{
 		"opponent": "UCLA",
 		"mascot": "Bruins",
-		"dateTime": "Oct 22 2016",
-		"logo": "ucla.jpg",
+		"dateTime": "Oct 22 2016 14:00",
+		"logo": "ucla.png",
 		"homeGame": false,
 		"result": "",
 		"score": ""
@@ -75,7 +75,7 @@ gamesArr = [
 	{
 		"opponent": "Washington",
 		"mascot": "Huskies",
-		"dateTime": "Oct 29 2016",
+		"dateTime": "Oct 29 2016 13:30",
 		"logo": "washington.png",
 		"homeGame": true,
 		"result": "",
@@ -93,8 +93,8 @@ gamesArr = [
 	{
 		"opponent": "Arizona State",
 		"mascot": "Sun Devils",
-		"dateTime": "Nov 10 2016",
-		"logo": "arizonastate.jpg",
+		"dateTime": "Nov 10 2016 19:30",
+		"logo": "arizonastate.png",
 		"homeGame": false,
 		"result": "",
 		"score": ""
@@ -112,7 +112,7 @@ gamesArr = [
 		"opponent": "Colorado",
 		"mascot": "Buffaloes",
 		"dateTime": "Nov 26 2016",
-		"logo": "colorado.jpg",
+		"logo": "colorado.png",
 		"homeGame": false,
 		"result": "",
 		"score": ""

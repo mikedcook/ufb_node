@@ -12,7 +12,7 @@ body {
 }
 #hoganTemplate {
 	&.container, .container {
-		padding: 0;
+		padding: 10px 0;
 	}
 }
 
@@ -41,7 +41,8 @@ body {
 		font-weight: bold;
 	}
 	.logos img {
-		width: 100%;
+		max-height: 300px;
+		max-width: 100%;
 	}
 }
 
@@ -62,8 +63,8 @@ body {
 	> table{
 		margin: 30px 0;
 	}
-
-	tr.home {
+	
+	tr.away {
 		background-color: #f6f6f6;
 	}
 
