@@ -21,10 +21,15 @@ module.exports = new Promise(function(resolve, reject) {
 					if (!nextGameIndex && !gameFinished) {
 						nextGameIndex = i; 
 					}
+					var utahlogo = 'http://www.utahutes.com/images/logos/site/site.png';
+					var opponentlogo = rawList[i]['s:opponentlogo'];
 					list.push({
 						"opponent": (title.split((isHome ? ' vs ' : ' at '))[1]).trim(),
 						"mascot": "",
-						"logo": rawList[i]['s:opponentlogo'],
+						"location": rawList[i]['ev:location'],
+						"homelogo": isHome ? utahlogo : opponentlogo,
+						"visitorlogo": isHome ? opponentlogo : utahlogo,
+						"opponentlogo": opponentlogo,
 						"homeGame": isHome,
 						"result": gameFinished ? descriptionArray[1] : '',
 						"score": '',

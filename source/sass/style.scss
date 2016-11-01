@@ -28,15 +28,14 @@ body {
 		margin-top: 0;
 	}
 	.logos {
-		width: 92%;
-		max-width: 800px;
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
 		margin: 0 auto;
+		max-width: 500px;
+		width: 92%;
 	}
-	.logos td.logoTD {
-		width: 50%;
-		padding: 0 2%;
-	}
-	.logos td > span {
+	.logos span {
 		font-size: 200%;
 		font-weight: bold;
 	}

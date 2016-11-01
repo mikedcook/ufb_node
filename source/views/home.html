@@ -1,19 +1,16 @@
 <div class="container">
 	<div class="top">
 		<div class="row">
-			<table class="logos">
-				<tr>
-					<td class="logoTD"><img src="img/washington.png" /></td>
-					<td><span>@</span></td>
-					<td class="logoTD"><img src="img/utah.png" /></td>
-				</tr>
-			</table>
+			<div class="logos">
+				<img src="{{nextGame.visitorlogo}}" />
+				<span>@</span>
+				<img src="{{nextGame.homelogo}}" />
+			</div>
 		</div>
 		<div class="row countdown">
 			<h1 class="block">{{nextGame.opponent}}</h1>
-			<h2 class="block">{{nextGame.mascot}}</h2>
 			<div class="gameInfo">
-				<h3>{{nextGame.displayDate}} at {{nextGame.displayTime}}</h3>
+				<h3>{{nextGame.displayDate}} at {{nextGame.displayTime}} in {{nextGame.location}}</h3>
 				<div>Current Date: <span id="currentDate"></span></div>
 				<div>{{nextGame.difference}}</div>
 			</div>

@@ -11,7 +11,7 @@
 	<tbody ng-repeat="game in games">
 		{{#games}}
 		<tr class="{{#homeGame}}home {{/homeGame}}">
-			<td class="logo"><img src="{{logo}}" /></td>
+			<td class="logo"><img src="{{opponentlogo}}" /></td>
 			<td>{{^homeGame}}<span>@</span> {{/homeGame}}{{opponent}} {{mascot}}</td>
 			<td>{{displayDate}}</td>
 			<td>{{displayTime}}</td>
