@@ -14,7 +14,8 @@ module.exports = new Promise(function(resolve, reject) {
 					var title = rawList[i].title;
 					var description = rawList[i].description;
 					var descriptionArray = description.split('\\n');
-					var isHome = title.includes(' vs ');
+					var isHome = title.includes(' vs ' );
+					var isChampionshipGame = title.includes('Championship' );
 					var gameDateArray = rawList[i]['ev:startdate'].split('T');
 					var gameDate = gameDateArray[0] + ' ' + gameDateArray[1];
 					var gameFinished = description.charAt(0) === "[";
@@ -30,7 +31,7 @@ module.exports = new Promise(function(resolve, reject) {
 						"homelogo": isHome ? utahlogo : opponentlogo,
 						"visitorlogo": isHome ? opponentlogo : utahlogo,
 						"opponentlogo": opponentlogo,
-						"homeGame": isHome,
+						"homeGame": isHome && !isChampionshipGame,
 						"result": gameFinished ? descriptionArray[1] : '',
 						"score": '',
 						"displayDate": getTime.display(gameDate, 'ddd, MMM Do YYYY'),
