@@ -34,8 +34,9 @@ module.exports = new Promise(function(resolve, reject) {
 						"homeGame": isHome && !isChampionshipGame,
 						"result": gameFinished ? descriptionArray[1] : '',
 						"score": '',
-						"displayDate": getTime.display(gameDate, 'ddd, MMM Do YYYY'),
-						"displayTime": getTime.display(gameDate, 'h:mm a').replace("12:00 am", "TBD").replace("4:52 pm", "TBD"),
+						"displayDate": getTime.display(gameDate, 'ddd, MMM Do'),
+						"displayTime": getTime.display(gameDate, 'h:mm a z').replace("12:00 am", "TBD").replace("4:52 pm", "TBD"),
+						"displayYear": getTime.display(gameDate, 'YYYY'),
 						"dateTimeUnix": getTime.unix(gameDate)
 					});
 				}

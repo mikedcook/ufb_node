@@ -1,6 +1,6 @@
 var timezone = 'America/Denver';
 var setDate = function() {
-	var currentDate = moment().tz(timezone).format("ddd, MMM D YYYY, h:mm:ss a");
+	var currentDate = moment().tz(timezone).format("ddd, MMM D, h:mm:ss a");
 	document.getElementById('currentDate').innerHTML = currentDate;
 };
 var getCounter = function() {
