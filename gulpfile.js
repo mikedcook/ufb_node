@@ -7,6 +7,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var nodemon = require('gulp-nodemon');
 var jshint = require('gulp-jshint');
+var install = require('gulp-install');
 var del = require('del');
 
 var paths = {
@@ -21,9 +22,9 @@ var paths = {
 	images: 'cdn/img'
 };
 
-gulp.task('default', ['develop']);
+gulp.task('default', ['develop','start']);
 
-gulp.task('develop', ['scripts','styles','minify-images']);
+gulp.task('develop', ['install','scripts','styles','minify-images']);
 
 // watch server files and restart as necessary
 gulp.task('start', ['watch'], function () {
@@ -43,6 +44,11 @@ gulp.task('clean::js', function() {
 	});
 gulp.task('clean::css', function() {
 	return del(['cdn/css']);
+	});
+
+gulp.task('install', function() {
+	return gulp.src(['./bower.json', './package.json'])
+		.pipe(install());
 	});
 
 gulp.task('lint', function() {
