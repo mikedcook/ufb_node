@@ -1,4 +1,4 @@
-var gamesArr = require('./rss.js');
+/*var gamesArr = require('./rss.js');
 var moment = require('moment');
 var nextGame = function() {
 	for(g = 0; g < gamesArr.length; g++) {
@@ -18,5 +18,6 @@ var nextGame = function() {
 		}
 	}
 };
-console.log(nextGame());
-module.exports = nextGame;
+console.log('next game:' + nextGame());
+module.exports = nextGame;*/
+// Is this file even used?

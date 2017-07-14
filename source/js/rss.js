@@ -19,8 +19,8 @@ module.exports = new Promise(function(resolve, reject) {
 					var gameDateArray = rawList[i]['ev:startdate'].split('T');
 					var gameDate = gameDateArray[0] + ' ' + gameDateArray[1];
 					var gameFinished = description.charAt(0) === "[";
-					if (!nextGameIndex && !gameFinished) {
-						nextGameIndex = i; 
+					if (!nextGameIndex && nextGameIndex !== 0 && !gameFinished) {
+						nextGameIndex = i;
 					}
 					var utahlogo = 'http://www.utahutes.com/images/logos/site/site.png';
 					var opponentlogo = rawList[i]['s:opponentlogo'];
@@ -40,9 +40,8 @@ module.exports = new Promise(function(resolve, reject) {
 						"dateTimeUnix": getTime.unix(gameDate)
 					});
 				}
-				console.log(nextGameIndex);
 				return {
-					list: list, 
+					list: list,
 					index: nextGameIndex
 				};
 			};
