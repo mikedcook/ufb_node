@@ -18,6 +18,9 @@ module.exports = new Promise(function(resolve, reject) {
 					var isChampionshipGame = title.includes('Championship' );
 					var gameDateArray = rawList[i]['ev:startdate'].split('T');
 					var gameDate = gameDateArray[0] + ' ' + gameDateArray[1];
+					var validateTime = function(hours, minutes) {
+						return (minutes < 60) && (minutes % 15 === 0) && (9 < hours < 23);
+					}
 					var gameFinished = description.charAt(0) === "[";
 					if (!nextGameIndex && nextGameIndex !== 0 && !gameFinished) {
 						nextGameIndex = i;
@@ -35,7 +38,7 @@ module.exports = new Promise(function(resolve, reject) {
 						"result": gameFinished ? descriptionArray[1] : '',
 						"score": '',
 						"displayDate": getTime.display(gameDate, 'ddd, MMM Do'),
-						"displayTime": getTime.display(gameDate, 'h:mm a z').replace("12:00 am", "TBD").replace("4:52 pm", "TBD"),
+						"displayTime": validateTime(getTime.display(gameDate, 'k'), getTime.display(gameDate, 'mm')) ? getTime.display(gameDate, 'h:mm a z') : "TBD",
 						"displayYear": getTime.display(gameDate, 'YYYY'),
 						"dateTimeUnix": getTime.unix(gameDate)
 					});
