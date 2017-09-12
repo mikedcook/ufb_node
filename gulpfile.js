@@ -15,7 +15,7 @@ var paths = {
 	lintScripts: 'source/js/*.js',
 	minifyScripts: [
 		'node_modules/moment/min/moment.min.js',
-		'node_modules/moment-timezone/builds/moment-timezone-with-data-2010-2020.min.js',
+		'node_modules/moment-timezone/builds/moment-timezone-with-data-*-*.min.js',
 		'source/js/scripts.js'
 	],
 	styles: 'source/sass/**/*.scss',
