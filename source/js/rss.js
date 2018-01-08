@@ -20,7 +20,7 @@ module.exports = new Promise(function(resolve, reject) {
 					var gameDate = gameDateArray[0] + ' ' + gameDateArray[1];
 					var validateTime = function(hours, minutes) {
 						return (minutes < 60) && (minutes % 15 === 0) && (9 < hours < 23);
-					}
+					};
 					var gameFinished = description.charAt(0) === "[";
 					if (!nextGameIndex && nextGameIndex !== 0 && !gameFinished) {
 						nextGameIndex = i;
