@@ -1,3 +1,5 @@
+"use strict";
+
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
 var sass = require('gulp-sass');
@@ -35,8 +37,8 @@ gulp.task('start', ['watch'], function () {
 		})
 	.on('restart', function () {
 		console.log('server restarted');
-		})
-	})
+		});
+	});
 
 // get tasks ready for watch
 gulp.task('clean::js', function() {

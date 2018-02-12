@@ -1,6 +1,8 @@
+"use strict";
+
 var moment = require('moment');
-var momentTimezone = require('moment-timezone');
 var timezone = 'America/Denver';
+require('moment-timezone');
 module.exports = {
 	"display": function(dateTime, format) {
 		// return moment.tz(dateTime, ['YYYY-MM-DD HH:mm:ss', 'YYYY-MM-DD'], timezone).format(format);

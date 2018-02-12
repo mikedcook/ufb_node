@@ -24,12 +24,12 @@
     "feed-read": "0.0.1",
     "feedparser": "^1.1.4",
     "fs": "0.0.1-security",
-    "gulp": "^3.9.1",
     "moment": "^2.14.1",
     "moment-timezone": "^0.5.5",
     "needle": "^1.1.2",
     "request": "^2.75.0",
-    "rss-to-json": "^1.0.2"
+    "rss-to-json": "^1.0.4",
+    "timezone": "^1.0.13"
   },
   "devDependencies": {
     "bower": "^1.8.0",

@@ -1,4 +1,7 @@
+"use strict";
+
 var timezone = 'America/Denver';
+var moment;
 var setDate = function() {
 	var currentDate = moment().tz(timezone).format("ddd, MMM D, h:mm:ss a");
 	document.getElementById('currentDate').innerHTML = currentDate;
@@ -14,7 +17,7 @@ var getCounter = function() {
 	};
 	var dateTimeUnix = ce.parent.getAttribute("data-unix");
 	var difference = dateTimeUnix - now;
-	
+
 	ce.seconds.innerHTML	=	Math.floor(difference % 60); difference /= 60;
 	ce.minutes.innerHTML	=	Math.floor(difference % 60); difference /= 60;
 	ce.hours.innerHTML	=	Math.floor(difference % 24); difference /= 24;

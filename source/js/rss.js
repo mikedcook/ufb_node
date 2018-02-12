@@ -4,7 +4,6 @@ var Promise = require('Promise').default;
 var getTime = require('./getTime.js');
 
 module.exports = new Promise(function(resolve, reject) {
-	needle.get('http://www.utahutes.com/calendar.ashx/calendar.rss?sport_id=2', function(error, response) {
 		if (!error && response.statusCode == 200) {
 			var gamesList = function(){
 				var rawList = response.body.rss.channel.item;
@@ -24,6 +23,7 @@ module.exports = new Promise(function(resolve, reject) {
 					var gameFinished = description.charAt(0) === "[";
 					if (!nextGameIndex && nextGameIndex !== 0 && !gameFinished) {
 						nextGameIndex = i;
+		needle.get('http://utahutes.com/calendar.ashx/calendar.rss?sport_id=2', function(error, response) {
 					}
 					var utahlogo = 'http://www.utahutes.com/images/logos/site/site.png';
 					var opponentlogo = rawList[i]['s:opponentlogo'];
