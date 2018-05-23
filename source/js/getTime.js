@@ -11,5 +11,9 @@ module.exports = {
 	"unix": function(dateTime) {
 		// return moment.tz(dateTime, ['YYYY-MM-DD HH:mm:ss', 'YYYY-MM-DD'], timezone).format('X');
 		return moment(dateTime).tz(timezone).format('X');
+	},
+	"unix_ms": function (dateTime) {
+		// return moment.tz(dateTime, ['YYYY-MM-DD HH:mm:ss', 'YYYY-MM-DD'], timezone).format('X');
+		return moment(dateTime).tz(timezone).format('x');
 	}
 };

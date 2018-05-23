@@ -24,7 +24,8 @@ function Schedule(){
 							return (minutes < 60) && (minutes % 15 === 0) && (9 < hours < 23);
 						};
 						var gameFinished = description.charAt(0) === "[";
-						if (!nextGameIndex && nextGameIndex !== 0 && !gameFinished) {
+						var pastKickoff = (getTime.unix_ms(gameDate) < Date.now());
+						if (!nextGameIndex && nextGameIndex !== 0 && !pastKickoff/* && !gameFinished*/) {
 							nextGameIndex = i;
 						}
 						var utahlogo = 'http://utahutes.com/images/logos/site/site.png';
