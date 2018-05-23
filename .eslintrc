@@ -1,0 +1,23 @@
+/* http://eslint.org/docs/user-guide/configuring */
+{
+	"extends": ["eslint:recommended", "plugin:react/recommended", "plugin:jest/recommended"],
+	"env": {
+		"browser": true,
+		"es6": true,
+		"node": true
+	},
+	"globals": {"Promise": true},
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"plugins": ["react", "jest"],
+	"rules": { /* 0 = turn rule off, 1 = warning, 2 = error */
+		"comma-dangle": 0,
+		"no-console": 1,
+		"no-mixed-spaces-and-tabs": [1, "smart-tabs"],
+		"no-trailing-spaces": [1, { "skipBlankLines": true }],
+		"no-unused-vars": 0
+	}
+}

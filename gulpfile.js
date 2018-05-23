@@ -8,7 +8,7 @@ var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var nodemon = require('gulp-nodemon');
-var jshint = require('gulp-jshint');
+var eslint = require('gulp-eslint');
 var install = require('gulp-install');
 var del = require('del');
 
@@ -55,9 +55,9 @@ gulp.task('install', function() {
 
 gulp.task('lint', function() {
 	return gulp.src(paths.lintScripts)
-	.pipe(jshint())
-	.pipe(jshint.reporter('jshint-stylish', { verbose: true }))
-	.pipe(jshint.reporter('fail'));
+	.pipe(eslint())
+	.pipe(eslint.format('stylish')) //stylish or compact
+	.pipe(eslint.failAfterError());
 });
 
 gulp.task('scripts', ['lint', 'clean::js'], function() {
