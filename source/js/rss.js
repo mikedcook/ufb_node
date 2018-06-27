@@ -6,7 +6,7 @@ var getTime = require('./getTime.js');
 
 function Schedule(){
 	this.getSchedule = new Promise(function(resolve) {
-		needle.get('http://utahutes.com/calendar.ashx/calendar.rss?sport_id=2', function(error, response) {
+		needle.get("https://utahutes.com/calendar.ashx/calendar.rss?sport_id=2", function(error, response) {
 			if (!error && response.statusCode === 200) {
 				var gamesList = function(){
 					var rawList = response.body.rss.channel.item;
